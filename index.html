@@ -4,222 +4,141 @@
     <title>Plan de Gestión Ambiental</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
-      html, body {
-      min-height: 100%;
-      }
-      body, div, form, input, select, textarea, label, p { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      line-height: 22px;
-      }
-      h1 {
-      position: absolute;
-      margin: 0;
-      font-size: 40px;
-      color: #fff;
-      z-index: 2;
-      line-height: 83px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .testbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 20px;
-      }
-      form {
-      width: 100%;
-      padding: 20px;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 8px  #669999; 
-      }
-      .banner {
-      position: relative;
-      height: 400px;
-      background-image: url("fondo.jpg");  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      .banner::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.3); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      }
-      input, select, textarea {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      }
-      input {
-      width: calc(100% - 10px);
-      padding: 5px;
-      }
-      input[type="date"] {
-      padding: 4px 5px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color:  #669999;
-      }
-      .item input:hover, .item select:hover, .item textarea:hover {
-      border: 1px solid transparent;
-      box-shadow: 0 0 3px 0  #669999;
-      color: #669999;
-      }
-      .item {
-      position: relative;
-      margin: 10px 0;
-      }
-      .item span {
-      color: red;
-      }
-      .week {
-      display:flex;
-      justfiy-content:space-between;
-      }
-      .colums {
-      display:flex;
-      justify-content:space-between;
-      flex-direction:row;
-      flex-wrap:wrap;
-      }
-      .colums div {
-      width:48%;
-      }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
-      }
-      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      font-size: 20px;
-      color:  #a3c2c2;
-      }
-      .item i {
-      right: 1%;
-      top: 30px;
-      z-index: 1;
-      }
-      input[type=radio], input[type=checkbox]  {
-      display: none;
-      }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      margin: 5px 20px 15px 0;
-      cursor: pointer;
-      }
-      .question span {
-      margin-left: 30px;
-      }
-      .question-answer label {
-      display: block;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      }
-      input[type=radio]:checked + label:before, label.radio:hover:before {
-      border: 2px solid  #669999;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 5px;
-      width: 8px;
-      height: 4px;
-      border: 3px solid  #669999;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      .flax {
-      display:flex;
-      justify-content:space-around;
-      }
-      .btn-block {
-      margin-top: 10px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px; 
-      background:  #669999;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background:  #a3c2c2;
-      }
-      @media (min-width: 568px) {
-      .name-item, .city-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .name-item input, .name-item div {
-      width: calc(50% - 20px);
-      }
-      .name-item div input {
-      width:97%;}
-      .name-item div label {
-      display:block;
-      padding-bottom:5px;
-      }
-      }
-    </style>
+	<link href="style.css" rel="stylesheet">
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+	  <form action="/">		
         <div class="banner">
           <h1>Diseñando el Plan de Gestión Ambiental en Mi Hogar</h1>
-        </div>
-        <br/>
-        <p>¿Soy consciente del consumo de energía en mi hogar? Empecemos por calcular si es el ideal</p>
-        <br/>
-        <div class="colums">
-          <div class="item">
-            <label for="name">Consumo promedio kilovatios mes<span>*</span></label>
-			<input id="name" type="text" name="name" required/>
-			<span class="guide">Este valor lo encuentra en su factura de energía</span>
-          </div>
-          <div class="item">
-            <label for="eaddress">Cantidad de personas<span>*</span></label>
-			<input id="eaddress" type="text"   name="eaddress" required/>
+        </div>        
+        <div class="colums">			
+          <div class="item">			
+			<div class="first-colum">
+				<h2>Energía</h2>
+				<p>¿Soy consciente del consumo de energía en mi hogar? Empecemos por calcular si es el ideal</p>			
+				<br />
+				<label for="consumo-energia">Consumo promedio kw mes<span>*</span></label>
+				<input id="consumo-energia" type="text" name="name" required/>
+				<span class="guide">Este valor lo encuentra en su factura de energía</span>
+			  </div>
+			  <div class="second-colum">
+				  <img src="energia-ayuda.jpg" />
+			  </div>			
+
+		  </div>                 
+		  <div class="item">
+			  <div class="first-colum">
+				<h2>Agua</h2>
+				<p>¿Soy ahorrador de agua? Empecemos por calcular si es verdad</p>			
+				<br />
+				<label for="consumo-agua">Consumo promedio en m<sup>3</sup> mes<span>*</span></label>
+				<input id="consumo-agua" type="text" name="name" required/>
+				<span class="guide">Este valor lo encuentra en su factura de acueducto</span>
+			  </div>
+			  <div class="second-colum">
+				  <img src="acueducto-ayuda.jpg" />
+			  </div>			
+          </div>                
+		</div>		
+        <div class="item">
+            <label for="cantidad-personas">Cantidad de personas con las que vive<span>*</span></label>
+			<input id="cantidad-personas" type="text"   name="eaddress" required/>
 			<span class="guide">Indique la cantidad de personas con las que vive</span>
-          </div>          
+		</div>    
+		<div class="btn-block">
+			<button type="submit" href="/">Calcular</button>
 		</div>
+
+
+		<div class="colums">
+			<div class="item" id="energia-normal" style="display: none;">
+				<h2>Energía</h2>
+				<p>Una persona en promedio consume al mes <strong>42kw</strong></p>
+				<p>Estás siendo amigable con el medio ambiente</p>
+				<img src="energia-bien.jpg" />
+			</div>
+			<div class="item texto" id="energia-alto" style="display: none;">
+				<h2>Energía</h2>
+				<p>Una persona en promedio consume al mes <strong>42kw</strong></p>
+				<p>Estás excedido en: <strong class="excedido"></strong></p>
+				<br />
+				<p>Ten en cuenta los siguientes tips:</p>
+				<br />
+				<h3>Con la energía no botes corriente, haz un uso inteligente</h3>				
+				<p class="list">Si quieres disfrutar de un nuevo electrodoméstico, a la hora de comprarlo y elegir entre varios modelos, ten en cuenta los vatios de potencia que cada uno requiere para funcionar, pues el consumo de energía depende de dos asuntos: los vatios de potencia y el tiempo de uso.</p>
+				<p class="list">No botes corriente. Mantén encendidos sólo aquellos electrodomésticos que en realidad estás usando; apaga y desconecta aquellos que no necesitas.</p>
+				<p class="list">Tu nevera ha sido diseñada para conservar los alimentos que preparas cada día. Si cuelgas tus prendas detrás de ella para secarlas, bloqueas la circulación de aire del electrodoméstico e incrementas en un 15% el consumo de energía. Además, evita que esté cerca de las fuentes de calor como por ejemplo estufas, pues dicha combinación afecta el óptimo desempeño de la nevera.</p>
+				<p class="list">Conserva tus alimentos sanos y frescos, pero abre tu nevera sólo cuando sea necesario y recuerda que la nevera siempre debe estar conectada, pues al desconectarla y volverla a conectar, estas consumiendo más energía.</p>
+				<p class="list">Si te estás quedando dormido mientras ves tu programa de televisión favorito, usa la función de autoapagado (sleep timer); de esta manera el televisor se apagará cuando tú lo decidas.</p>
+				<p class="list">El computador es un excelente aliado para trabajar, informarse, conocer el mundo o divertirse. Si ya terminaste tu actividad o vas a descansar un poco, apaga el monitor para disminuir el consumo de energía.</p>
+				<p class="list">¡Qué bueno es escuchar música, ver una buena película o jugar! La grabadora, el DVD y los videojuegos son electrodomésticos que consumen poca energía, pero ten muy presente que debes apagarlos cuando no los estés utilizando.</p>
+				<p> class="list"¡Ya estás listo para llamar a tus seres queridos! Cuando la carga de tu celular esté completa, ten en cuenta que si dejas conectado el cargador al tomacorriente, se disminuye su vida útil y continúa generando consumos de energía.</p>
+
+				<h3>Ilumina tu vida con buenos hábitos en el uso de la energía</h3>
+				<p class="list">Aprovecha al máximo la luz del sol e ilumina tu hogar pintando las paredes de colores claros, así la luz se refleja mejor.</p>
+				<p class="list">Transforma tu hogar en un espacio de luz más eficiente. Cambia los bombillos tradicionales por bombillos ahorradores, que aunque son más costosos, consumen cuatro veces menos energía y duran hasta diez veces más. Un bombillo de 60 vatios equivale a un bombillo ahorrador de 15 vatios.</p>
+				<p class="list">Si vas a salir de casa, no olvides apagar las luces que no vas a seguir utilizando.</p>
+
+				<h3>Ponle sabor a tus comidas sin abusar de la energía</h3>
+				<p class="list">Cuando  tu hijo llegue de la escuela, preferiblemente calienta su comida en el microondas; sólo utiliza 20% de la energía requerida por un horno.</p>
+				<p class="list">¡Qué bueno es mantener frescos los alimentos! pero recuerda envolverlos cuando los guardes en el refrigerador. Aquellos que no están cubiertos, liberan humedad y hacen que el compresor de la nevera trabaje más.</p>
+				<p class="list">Prepara todas las comidas que tanto le gustan a tu familia con poca agua, siempre con ollas tapadas, de fondo plano y del mismo tamaño de la parrilla. Cuando puedas, usa preferiblemente la olla a presión, así los alimentos se cocinarán más rápido.</p>
+
+				<h3>Ponle sabor a tus comidas sin abusar de la energía</h3>
+				<p class="list">Cuando  tu hijo llegue de la escuela, preferiblemente calienta su comida en el microondas; sólo utiliza 20% de la energía requerida por un horno.</p>
+				<p class="list">¡Qué bueno es mantener frescos los alimentos! pero recuerda envolverlos cuando los guardes en el refrigerador. Aquellos que no están cubiertos, liberan humedad y hacen que el compresor de la nevera trabaje más.</p>
+				<p class="list">Prepara todas las comidas que tanto le gustan a tu familia con poca agua, siempre con ollas tapadas, de fondo plano y del mismo tamaño de la parrilla. Cuando puedas, usa preferiblemente la olla a presión, así los alimentos se cocinarán más rápido.</p>
+
+				<br />
+				<p class="fuente"><a href="https://www.epm.com.co/site/clientes_usuarios/clientes-y-usuarios/empresas/energ%C3%ADa/grandes-empresas/tips-para-el-uso-inteligente#:~:text=Mis%20consumos%20en%20el%20hogar,152%20kWh%20mes%20de%20energ%C3%ADa.">Fuente</a></p>
+			</div>
+			<div class="item" id="agua-normal" style="display: none;">
+				<h2>Agua</h2>
+				<p>Una persona en promedio consume al mes <strong>4m<sup>3</sup></strong></p>
+				<p>Estás siendo amigable con el medio ambiente</p>
+				<img src="agua-bien.jpg" />
+			</div>
+			<div class="item texto" id="agua-alto" style="display: none;">
+				<h2>Agua</h2>
+				<p>Una persona en promedio consume al mes <strong>4m<sup>3</sup></strong></p>
+				<p>Estás excedido en: <strong class="excedido"></strong></p>
+				<br />
+				<p>Ten en cuenta los siguientes tips:</p>
+				<br />
+				<h3>Para que el agua no gotee, haz un uso inteligente</h3>
+				<p class="list">Mantén tu ropa siempre limpia, pero ten presente usar la lavadora con cargas completas y sigue las indicaciones sobre la cantidad de jabón que se requiere, para evitar enjuagues adicionales.</p>
+				<p class="list">Es maravilloso estar aseado pero recuerda para no desperdiciar agua, cerrar la canilla  mientras te enjabonas, afeitas o cepillas los dientes. Es bueno también tener este hábito cuando laves los utensilios de cocina.</p>
+				<p class="list">Si te gusta aprovechar al máximo los recursos, reutiliza el agua con la que lavaste la ropa o las verduras, y úsala para regar las plantas o para la limpieza de pisos y patios.</p>
+				<p class="list">Disfruta el aroma de las flores y observa la belleza de tu jardín, regando las plantas en horas de poco sol, para evitar la evaporación y aprovechar mejor la capacidad de absorción del suelo.</p>
+				<p class="list">Te recomendamos sembrar plantas nativas de la región en tu jardín,  ya que consumen más eficientemente el agua. La combinación de éstas con rocas y grava pueden dar una apariencia atractiva y consumir menos cantidad de agua.</p>
+				<p class="list">Recuerda que el sanitario no es un bote de basura, úsalo para lo que fue diseñado. Por otra parte, si tu sanitario es de tanque grande, puedes colocar una o dos botellas plásticas con arena dentro del tanque, de modo que consuma menos agua en cada descarga.</p>
+
+				<h3>Cuando el agua se esfuma, en tu cuenta suma.</h3>
+				<p class="list">Cuando sea posible utiliza equipos ahorradores. Aunque son más costosos que los corrientes, te permiten una reducción de hasta el 10% de tu consumo de agua, lo cual se verá reflejado también en tu factura.</p>
+				<p class="list">Cuidar el agua es hacer también mantenimiento periódico de las canoas y desagües de aguas lluvias.</p>
+				<p class="list">Mantén siempre en buen estado los empaques de las llaves de los sanitarios, lavamanos, lavaderos, pocetas y duchas, para evitar fugas y goteos.</p>
+				<p class="list">Sé cuidadoso. El deterioro y rompimiento de las tuberías también puede ser causado por grasas o tóxicos. No arrojes estos elementos ni basuras a las rejillas y desagües de los lavaderos, sanitarios y pocetas.</p>
+				<p class="list">Para evitar obstrucciones deposita el papel higiénico y las toallas higiénicas en un lugar distinto a la taza del sanitario.</p>
+				<p class="list">Una excelente forma de cuidar el alcantarillado, es no arrojando materiales de construcción, grasas u otros residuos a los sumideros.</p>
+
+				<h3>Con unos buenos consejos encuentro las fugas y los goteos.</h3>
+				<h3>En el sanitario:</h3>
+				<p class="list">Puedes echar un colorante en el tanque. Si el agua de la taza comienza a teñirse, significa que hay una pérdida. Verifica que el flotante no presente deficiencia en el cierre de la válvula y que tenga un recorrido libre de topes o trabas. De ser necesario, cambia las válvulas.</p>
+				<h3>Tuberías:</h3>				
+				<p class="list">Revisa que no haya presencia de humedad en las paredes o en el piso de tu casa. Esto puede ser causado por una fuga de agua en las tuberías.</p>
+				<p class="list">Para detectar fugas en las redes de las tuberías, antes de acostarte en la noche, cierra todas las canillas, verifica y anota las cifras que marca tu medidor de agua. Si a la mañana siguiente la numeración ha avanzado sin que se haya utilizado el baño o abierto las canillas, significa que hay una fuga en algún lugar de tu casa.</p>
+				<h3>Algunos equipos eficientes que te ayudan a hacer un uso inteligente:</h3>
+				<p class="list">Sanitarios de bajo consumo: desarrollados para trabajar con volúmenes de 6 litros o menos.</p>
+				<p class="list">Grifos con regulador de caudal: modifican el caudal máximo del agua.</p>
+				<p class="list">Llaves aireadoras: incorporan aire al agua, aumentando el volumen y reduciendo el caudal del agua.</p>
+				<p class="list">Llaves con sensores infrarrojos: se activan y desactivan por la proximidad y lejanía de las manos.</p>
+
+				<br />
+				<p class="fuente"><a href="https://www.epm.com.co/site/clientes_usuarios/clientes-y-usuarios/empresas/energ%C3%ADa/grandes-empresas/tips-para-el-uso-inteligente#:~:text=Mis%20consumos%20en%20el%20hogar,152%20kWh%20mes%20de%20energ%C3%ADa.">Fuente</a></p>
+			</div>
+		</div>						
+
 		<!--
         <div class="question">
           <label>Include my contact information on lists distributed to other attendees.</label>
@@ -328,4 +247,40 @@
       </form>
     </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+
+	$(document).ready(function(){
+		$("form").submit(function(){
+			let energia = $("#consumo-energia").val();
+			let agua = $("#consumo-agua").val();
+			let personas = $("#cantidad-personas").val();
+
+			let energiaPorPersona = Math.ceil(energia / personas);
+			let aguaPorPersona = Math.ceil(agua / personas);
+
+			if(energiaPorPersona >= 70){
+				$("#energia-alto").show();
+				$("#energia-normal").hide();
+				$("#energia-alto .excedido").html("" + energiaPorPersona - 70 + "kw");
+			}
+			else{
+				$("#energia-alto").hide();
+				$("#energia-normal").show();
+			}
+
+			if(aguaPorPersona >= 4){
+				$("#agua-alto .excedido").html("" + aguaPorPersona - 4 + "m<sup>3</sup>");
+				$("#agua-alto").show();
+				$("#agua-normal").hide();
+			}
+			else{
+				$("#agua-alto").hide();
+				$("#agua-normal").show();
+			}
+
+			return false;
+		});
+	});
+  </script>
 </html>
