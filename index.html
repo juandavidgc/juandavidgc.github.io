@@ -138,112 +138,6 @@
 				<p class="fuente"><a href="https://www.epm.com.co/site/clientes_usuarios/clientes-y-usuarios/empresas/energ%C3%ADa/grandes-empresas/tips-para-el-uso-inteligente#:~:text=Mis%20consumos%20en%20el%20hogar,152%20kWh%20mes%20de%20energ%C3%ADa.">Fuente</a></p>
 			</div>
 		</div>						
-
-		<!--
-        <div class="question">
-          <label>Include my contact information on lists distributed to other attendees.</label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="none" id="radio_1" name="info"/>
-              <label for="radio_1" class="radio"><span>Yes</span></label>
-            </div>
-            <div>
-              <input  type="radio" value="none" id="radio_2" name="info"/>
-              <label for="radio_2" class="radio"><span>No</span></label>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <p>Meal Preference</p>
-          <select>
-            <option selected value="" disabled selected></option>
-            <option value="b" >Beef</option>
-            <option value="ch">Chicken</option>
-            <option value="v">Vegetarian</option>
-            <option value="n">None</option>
-          </select>
-        </div>
-        <div class="week">
-          <div class="question">
-            <label>Days Attending </label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_3" name="day"/>
-                <label for="radio_3" class="radio"><span>Sunday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_4" name="day"/>
-                <label for="radio_4" class="radio"><span>Monday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_5" name="day"/>
-                <label for="radio_5" class="radio"><span>Tuesday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_6" name="day"/>
-                <label for="radio_6" class="radio"><span>Wednesday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_7" name="day"/>
-                <label for="radio_7" class="radio"><span>Thursday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_8" name="day"/>
-                <label for="radio_8" class="radio"><span>Friday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_9" name="day"/>
-                <label for="radio_9" class="radio"><span>Saturday</span></label>
-              </div>
-            </div>
-          </div>
-          <div class="question">
-            <label>Activities Attending</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_10" name="activity"/>
-                <label for="radio_10" class="radio"><span>CEO luncheon</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_11" name="activity"/>
-                <label for="radio_11" class="radio"><span>Finance seminar</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_12" name="activity"/>
-                <label for="radio_12" class="radio"><span>Leadership seminar</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_13" name="activity"/>
-                <label for="radio_13" class="radio"><span>Marketing workshop</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_14" name="activity"/>
-                <label for="radio_14" class="radio"><span>Teamwork seminar</span></label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <label for="visit">Special Requirements</label>
-          <textarea id="visit" rows="3"></textarea>
-        </div>
-        <div class="question">
-          <label>Did you attend last years conference?</label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="none" id="radio_15" name="contact"/>
-              <label for="radio_15" class="radio"><span>Yes</span></label>
-            </div>
-            <div>
-              <input  type="radio" value="none" id="radio_16" name="contact"/>
-              <label for="radio_16" class="radio"><span>No</span></label>
-            </div>
-          </div>
-        </div>
-        <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
-		</div>
-		-->
       </form>
     </div>
   </body>
@@ -259,7 +153,7 @@
 			let energiaPorPersona = Math.ceil(energia / personas);
 			let aguaPorPersona = Math.ceil(agua / personas);
 
-			if(energiaPorPersona >= 70){
+			if(energiaPorPersona > 70){
 				$("#energia-alto").show();
 				$("#energia-normal").hide();
 				$("#energia-alto .excedido").html("" + energiaPorPersona - 70 + "kw");
@@ -269,7 +163,7 @@
 				$("#energia-normal").show();
 			}
 
-			if(aguaPorPersona >= 4){
+			if(aguaPorPersona > 4){
 				$("#agua-alto .excedido").html("" + aguaPorPersona - 4 + "m<sup>3</sup>");
 				$("#agua-alto").show();
 				$("#agua-normal").hide();
